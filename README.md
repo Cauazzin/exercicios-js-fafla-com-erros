@@ -1,2 +1,2 @@
 # exercicios-js-fafla-com-erros
-fiz até a 33
+fazer apartir da 34
