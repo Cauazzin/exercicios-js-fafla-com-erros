@@ -343,22 +343,24 @@ const btns = [
   {
     nome: "Ex. 34 - Soma até negativo",
     func: () => {
-      let soma = 0;
-      let n = 0;
+      let numeros = [];
+      let numero;
       while (true) {
-        let idade = parseInt(prompt("Digite um número (negativo para parar):"));
-        if (n < 0){
-          break;
-        }
+        numero = Number(prompt("Digite um número (negativo para parar):"));
 
-        soma += idade;
-        n++
+        if (numero < 0){
+          break;
+        }else{
+          numeros.push(numero);
+        }
+     }
+
+      let soma = 0;
+      for (let i = 0; i < numeros.length; i++) {
+        soma += numeros[i];
       }
-      if (quantidade > 0){
-        alert(`A soma das idades é: ${soma}`)
-      }else{
-        alert("Nenhuma idade válida foi digitada")
-      }
+
+      alert("A soma dos números positivos é : " + soma);
     },
   },
   {
@@ -366,17 +368,23 @@ const btns = [
     func: () => {
       const frase = prompt("Digite uma frase:");
       const palavras = frase.split(" ");
-      alert(`Número de palavras: ${palavras.length - 1}`);
+      alert(`Número de palavras: ${palavras.length}`);
     },
   },
   {
     nome: "Ex. 36 - Notas >= 7",
     func: () => {
-      let count = 0;
-      for (let i = 0; i < 6; i++) {
-        if (Number(prompt(`Nota ${i + 1}:`)) > 7) count++;
+      let notas = [];
+      let resultados = "";
+
+      for (let i = 0; i <= 6; i++) {
+        let nota = Number(prompt(`Nota ${i}:`));
+        notas.push(nota);
       }
-      alert(`${count} notas são maiores ou iguais a 7`);
+      for (let i = 0; i < notas.length; i++) {
+      if (notas[i] >= 7){
+        resultados ``
+      }
     },
   },
   {
