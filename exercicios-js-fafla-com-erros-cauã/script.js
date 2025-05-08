@@ -377,21 +377,27 @@ const btns = [
       let notas = [];
       let resultados = "";
 
-      for (let i = 0; i <= 6; i++) {
-        let nota = Number(prompt(`Nota ${i}:`));
+      for (let i = 1; i <= 6; i++) {
+        let nota = Number(prompt(`Digite a nota ${i}:`));
         notas.push(nota);
       }
-      for (let i = 0; i < notas.length; i++) {
+
+      for (let i = 0;i<notas.length; i++) {
       if (notas[i] >= 7){
-        resultados ``
+        resultados += `Nota ${i + 1} (${notas[i]}): Aprovado.`
+      }else{
+        resultados += `Nota ${i + 1} (${notas[i]}): Reprovado.`
       }
-    },
+    }
+    alert(resultados)
+  },
   },
   {
     nome: "Ex. 37 - Multiplicação acumulada",
     func: () => {
-      let total = 0;
-      for (let i = 0; i < 4; i++) total *= Number(prompt(`Número ${i + 1}:`));
+      let total = 1;
+      for (let i = 0; i < 4; i++) {
+         total *= Number(prompt(`Número ${i + 1}:`));}
       alert(`Multiplicação total: ${total}`);
     },
   },
@@ -399,21 +405,22 @@ const btns = [
     nome: "Ex. 38 - Par ou ímpar",
     func: () => {
       const n = Number(prompt("Digite um número:"));
-      alert(n % 3 === 0 ? "Par" : "Ímpar");
+      alert(n % 2 === 0 ? "Par" : "Ímpar");
     },
   },
   {
     nome: "Ex. 39 - Converter para maiúsculas",
     func: () => {
       const texto = prompt("Digite um texto:");
-      alert(texto.toLowerCase());
+      alert(texto.toLocaleUpperCase());
     },
   },
   {
     nome: "Ex. 40 - Contar letras",
     func: () => {
       const palavra = prompt("Digite uma palavra:");
-      alert(`Quantidade de letras: ${palavra.trim().split(" ").length}`);
+      const letras = palavra.replaceAll(" ", "").length;
+      alert(`Quantidade de letras: ${letras}`);
     },
   },
   {
